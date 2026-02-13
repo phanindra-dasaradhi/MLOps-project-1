@@ -1,0 +1,158 @@
+/* Reset + base styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+}
+
+/* Main container */
+.container {
+    background: #ffffff;
+    width: 100%;
+    max-width: 520px;
+    padding: 30px 35px;
+    border-radius: 14px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Title */
+.container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #2c5364;
+    letter-spacing: 1px;
+}
+
+/* Form groups */
+.form-group {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Labels */
+.form-group label {
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #444;
+}
+
+/* Inputs & selects */
+.form-group input,
+.form-group select {
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+/* Focus & hover effects */
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #2c5364;
+    box-shadow: 0 0 0 3px rgba(44, 83, 100, 0.2);
+    transform: scale(1.01);
+}
+
+/* Arrival date row tweak */
+#arrival_date {
+    margin-bottom: 8px;
+}
+
+/* Button */
+button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 14px;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(135deg, #2c5364, #0f2027);
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+/* Button hover & active */
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(44, 83, 100, 0.4);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Result section */
+.result {
+    margin-top: 25px;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    animation: slideUp 0.6s ease;
+}
+
+/* Prediction messages */
+.result p {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Cancelled */
+.result p:has(span.cancel) {
+    color: #c0392b;
+}
+
+/* Not cancelled */
+.result p:has(span.success) {
+    color: #27ae60;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .container {
+        padding: 25px 20px;
+    }
+
+    .container h2 {
+        font-size: 20px;
+    }
+}
